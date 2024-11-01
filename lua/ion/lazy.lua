@@ -1,4 +1,4 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+  local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -20,3 +20,4 @@ require("lazy").setup({ { import = "ion.plugins" }, { import = "ion.plugins.lsp"
     notify = false,
   },
 })
+
