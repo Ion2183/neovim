@@ -1,8 +1,8 @@
 return {
   "stevearc/conform.nvim",
-    dependencies = { "mason.nvim" },
+  dependencies = { "mason.nvim" },
   event = { "BufReadPre", "BufNewFile" },
-      cmd = { "ConformInfo" },
+  cmd = { "ConformInfo" },
 
   config = function()
     local conform = require("conform")
