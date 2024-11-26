@@ -1,6 +1,7 @@
 return {
   "williamboman/mason.nvim",
   dependencies = {
+    "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
@@ -37,18 +38,22 @@ return {
         "emmet_ls",
         "prismals",
         "pyright",
+        "clangd",
       },
     })
 
     mason_tool_installer.setup({
       ensure_installed = {
+        "java-debug-adapter",
+        "java-test",
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
         "isort", -- python formatter
         "black", -- python formatter
         "pylint",
         "eslint_d",
-        --        "ruff",
+        "codelldb",
+        "cpptools",
       },
     })
   end,
