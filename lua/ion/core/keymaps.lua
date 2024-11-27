@@ -23,7 +23,12 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 -- Debugging
 keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { desc = "toggle breakpoint" })
-keymap.set("n", "<leader>bc", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>")
+keymap.set(
+  "n",
+  "<leader>bc",
+  "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
+  { desc = "set breakpoint" }
+)
 keymap.set("n", "<leader>bl", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>")
 keymap.set("n", "<leader>br", "<cmd>lua require'dap'.clear_breakpoints()<cr>")
 keymap.set("n", "<leader>ba", "<cmd>Telescope dap list_breakpoints<cr>")
@@ -55,4 +60,5 @@ keymap.set("n", "<leader>de", function()
 end)
 
 -- terminal
-keymap.set("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
+keymap.set("t", "<ESC>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
+keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<cr>")
