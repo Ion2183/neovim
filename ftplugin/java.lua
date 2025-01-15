@@ -21,12 +21,11 @@ end
 
 -- Needed for debugging
 local bundles = {
-  vim.fn.glob(home .. "/.local/share/nvim/mason/share/java-debug-adapter/com.microsoft.java.debug.plugin.jar"),
+  vim.fn.glob(home .. "/.local/share/nvim/mason/share/java-debug-adapter/com.microsoft.java.debug.plugin-0.53.1.jar"),
 }
 
 -- Needed for running/debugging unit tests
--- vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.local/share/nvim/mason/share/java-test/*.jar", 1), "\n"))
-
+vim.list_extend(bundles, vim.split(vim.fn.glob("/path/to/microsoft/vscode-java-test/server/*.jar", 1), "\n"))
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
   -- The command that starts the language server
@@ -56,6 +55,10 @@ local config = {
   },
 
   root_dir = vim.fs.root(0, { ".git", "mvnw", "pom.xml", "build.gradle" }),
+  init_options = {
+    bundles = bundles,
+    extendedClientCapabilities = extendedClientCapabilities,
+  },
   capabilities = capabilities,
 }
 
