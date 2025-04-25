@@ -1,16 +1,15 @@
-return 
-{
-  'nvimdev/dashboard-nvim',
-  event = 'VimEnter',
+return {
+  "nvimdev/dashboard-nvim",
+  event = "VimEnter",
   config = function()
-    require('dashboard').setup {
+    require("dashboard").setup({
       -- config
-       config = {
-      week_header = {
-       enable = true,
+      config = {
+        week_header = {
+          enable = true,
+        },
       },
-    } 
-    }
+    })
   end,
-  dependencies = { {'nvim-tree/nvim-web-devicons'}}
+  dependencies = { { "nvim-tree/nvim-web-devicons" } },
 }
